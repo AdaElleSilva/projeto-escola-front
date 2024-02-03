@@ -20,6 +20,21 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import { ListaAnoLetivoComponent } from './pages/lista-ano-letivo/lista-ano-letivo.component';
+import { ListaAlunoComponent } from './pages/lista-aluno/lista-aluno.component';
+import { ListaAnoSerieComponent } from './pages/lista-ano-serie/lista-ano-serie.component';
+import { ListaCidadeComponent } from './pages/lista-cidade/lista-cidade.component';
+import { ListaEscolaComponent } from './pages/lista-escola/lista-escola.component';
+import { ListaEstadoComponent } from './pages/lista-estado/lista-estado.component';
+import { ListaGeneroComponent } from './pages/lista-genero/lista-genero.component';
+import { ListaHorarioAulaComponent } from './pages/lista-horario-aula/lista-horario-aula.component';
+import { ListaMatriculaComponent } from './pages/lista-matricula/lista-matricula.component';
+import { ListaNotaComponent } from './pages/lista-nota/lista-nota.component';
+import { ListaPeriodoAulaComponent } from './pages/lista-periodo-aula/lista-periodo-aula.component';
+import { ListaPessoaComponent } from './pages/lista-pessoa/lista-pessoa.component';
+import { ListaPresencaComponent } from './pages/lista-presenca/lista-presenca.component';
+import { ListaProfessorComponent } from './pages/lista-professor/lista-professor.component';
+import { ListaProfessorTurmaComponent } from './pages/lista-professor-turma/lista-professor-turma.component';
+import { ListaTurmaComponent } from './pages/lista-turma/lista-turma.component';
 
 
 registerLocaleData(pt);
@@ -27,8 +42,24 @@ registerLocaleData(pt);
 @NgModule({
   declarations: [
     AppComponent, 
+    ListaAlunoComponent,
+    ListaAnoLetivoComponent,
+    ListaAnoSerieComponent,
+    ListaCidadeComponent,
     ListaDisciplinaComponent,
-    ListaAnoLetivoComponent
+    ListaEscolaComponent,
+    ListaEstadoComponent,
+    ListaGeneroComponent,
+    ListaHorarioAulaComponent,
+    ListaMatriculaComponent,
+    ListaNotaComponent,
+    ListaPeriodoAulaComponent,
+    ListaPessoaComponent,
+    ListaPresencaComponent,
+    ListaProfessorComponent,
+    ListaProfessorTurmaComponent,
+    ListaTurmaComponent
+
   ],
   imports: [
     BrowserModule,
