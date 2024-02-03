@@ -8,7 +8,7 @@ import { Disciplina } from '../models/disciplina';
 })
 export class DisciplinaService { 
   
-  private apiUrl = 'localhost:8080/disciplinas';
+  private apiUrl = 'http://localhost:8080/disciplinas';
 
   constructor(private http: HttpClient) { }
 
