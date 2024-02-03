@@ -14,12 +14,17 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { ListaDisciplinaComponent } from './pages/lista-disciplina/lista-disciplina.component';
+import { NzTableModule } from 'ng-zorro-antd/table';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+
 
 registerLocaleData(pt);
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent, 
+    ListaDisciplinaComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +35,9 @@ registerLocaleData(pt);
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    NzButtonModule
+    NzButtonModule,
+    NzTableModule,
+    NzDividerModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: pt_PT }

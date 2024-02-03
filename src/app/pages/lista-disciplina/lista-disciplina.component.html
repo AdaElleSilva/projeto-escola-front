@@ -1,0 +1,17 @@
+<nz-table #basicTable [nzData]="disciplinas">
+    <thead>
+      <tr>
+        <th>Nome</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of basicTable.data">
+        <td>{{ data.nome }}</td>
+        <td>
+          <a>Action 一 {{ data.nome }}</a>
+          <nz-divider nzType="vertical"></nz-divider>
+          <a>Delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
