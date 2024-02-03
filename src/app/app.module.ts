@@ -17,6 +17,9 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { ListaDisciplinaComponent } from './pages/lista-disciplina/lista-disciplina.component';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
+import { ListaAnoLetivoComponent } from './pages/lista-ano-letivo/lista-ano-letivo.component';
 
 
 registerLocaleData(pt);
@@ -24,7 +27,8 @@ registerLocaleData(pt);
 @NgModule({
   declarations: [
     AppComponent, 
-    ListaDisciplinaComponent
+    ListaDisciplinaComponent,
+    ListaAnoLetivoComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,9 @@ registerLocaleData(pt);
     BrowserAnimationsModule,
     NzButtonModule,
     NzTableModule,
-    NzDividerModule
+    NzDividerModule,
+    NzPageHeaderModule,
+    NzSwitchModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: pt_PT }
