@@ -1,1 +1,33 @@
-<p>lista-nota works!</p>
+<nz-page-header>
+    <nz-page-header-title>Nota</nz-page-header-title>
+    <nz-page-header-subtitle>{{listaNota.length}} registro(s)</nz-page-header-subtitle>
+    <nz-page-header-extra style="display: flex">
+      <button nz-button nzType="primary">Novo</button>
+    </nz-page-header-extra>
+    <nz-page-header-content>
+      <nz-table #basicTable 
+      [nzWidthConfig]="['auto', '100px']"
+      [nzScroll]="{ y: '55vh' }"
+      [nzData]="listaNota">
+        <thead>
+          <tr>
+            <th>Aluno</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of basicTable.data">
+            <td>{{ data.aluno }}</td>
+            <td>
+              <a nz-button nzType="text" nz-tooltip="Editar">
+                <i nz-icon nzType="form" nzTheme="outline"></i>
+              </a>
+              <a nz-button nzType="text" nzDanger nz-tooltip="Excluir">
+                <i nz-icon nzType="delete" nzTheme="outline"></i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </nz-table>
+    </nz-page-header-content>
+  </nz-page-header>
