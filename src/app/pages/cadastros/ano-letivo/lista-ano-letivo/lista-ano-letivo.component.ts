@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AnoLetivo } from 'src/app/models/ano-letivo';
 import { AnoLetivoService } from 'src/app/services/ano-letivo.service';
 
@@ -12,7 +13,9 @@ export class ListaAnoLetivoComponent {
   listaAnoLetivo!:AnoLetivo[];
 
   constructor(
-private  anoLetivoService: AnoLetivoService) { }
+private  anoLetivoService: AnoLetivoService,
+private router: Router
+) { }
 
   
   ngOnInit(): void {
@@ -20,5 +23,9 @@ private  anoLetivoService: AnoLetivoService) { }
       this.listaAnoLetivo = data;
     });
   
+  }
+
+  onNovo() {
+    this.router.navigate(['cadastro-ano-letivo']);
   }
 }
