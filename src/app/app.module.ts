@@ -45,6 +45,8 @@ import { CadastroPeriodoAulaComponent } from './pages/cadastros/periodo-aula/cad
 import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { NzNotificationModule } from 'ng-zorro-antd/notification';
 
 
 registerLocaleData(pt);
@@ -94,7 +96,9 @@ registerLocaleData(pt);
     NzSwitchModule,
     NzSpinModule,
     ReactiveFormsModule,
-    NzFormModule
+    NzFormModule,
+    NzModalModule,
+    NzNotificationModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: pt_PT }

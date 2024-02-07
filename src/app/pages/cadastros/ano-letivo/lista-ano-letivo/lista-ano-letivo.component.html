@@ -1,6 +1,7 @@
+<nz-spin [nzSpinning]="carregando" [nzTip]="'Processando...'">
 <nz-page-header>
     <nz-page-header-title>Ano Letivo</nz-page-header-title>
-    <nz-page-header-subtitle>{{listaAnoLetivo.length}} registro(s)</nz-page-header-subtitle>
+    <nz-page-header-subtitle>{{numeroRegistros}} registro(s)</nz-page-header-subtitle>
     <nz-page-header-extra style="display: flex">
       <button nz-button nzType="primary" (click)="onNovo()">Novo</button>
     </nz-page-header-extra>
@@ -19,10 +20,10 @@
           <tr *ngFor="let data of basicTable.data">
             <td>{{ data.ano }}</td>
             <td>
-              <a nz-button nzType="text" nz-tooltip="Editar">
+              <a nz-button nzType="text" nz-tooltip="Editar" (click)="onEditar(data)">
                 <i nz-icon nzType="form" nzTheme="outline"></i>
               </a>
-              <a nz-button nzType="text" nzDanger nz-tooltip="Excluir">
+              <a nz-button nzType="text" nzDanger nz-tooltip="Excluir" (click)="onModalDeletar(data.id)">
                 <i nz-icon nzType="delete" nzTheme="outline"></i>
               </a>
             </td>
@@ -31,3 +32,4 @@
       </nz-table>
     </nz-page-header-content>
   </nz-page-header>
+</nz-spin>

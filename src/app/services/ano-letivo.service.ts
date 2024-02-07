@@ -16,7 +16,7 @@ export class AnoLetivoService {
     return this.http.get<AnoLetivo[]>(this.apiUrl);
   }
 
-  buscar(id: number): Observable<AnoLetivo> {
+  buscar(id: string): Observable<AnoLetivo> {
     return this.http.get<AnoLetivo>(`${this.apiUrl}/${id}`);
   }
 
@@ -24,11 +24,11 @@ export class AnoLetivoService {
     return this.http.post<AnoLetivo>(this.apiUrl, eleitor);
   }
 
-  atualizar(id: number, eleitor: AnoLetivo): Observable<AnoLetivo> {
+  atualizar(id: string, eleitor: AnoLetivo): Observable<AnoLetivo> {
     return this.http.put<AnoLetivo>(`${this.apiUrl}/${id}`, eleitor);
   }
 
-  deletar(id: number): Observable<any> {
+  deletar(id: string): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
 }

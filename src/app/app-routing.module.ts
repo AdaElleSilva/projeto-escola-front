@@ -24,6 +24,7 @@ const routes: Routes = [
   { path: 'lista-aluno', component: ListaAlunoComponent },
   { path: 'lista-ano-letivo', component: ListaAnoLetivoComponent },
   { path: 'cadastro-ano-letivo', component: CadastroAnoLetivoComponent },
+  { path: 'editar-ano-letivo/:id', component: CadastroAnoLetivoComponent },
   { path: 'lista-ano-serie', component: ListaAnoSerieComponent },
   { path: 'lista-cidade', component: ListaCidadeComponent },
   { path: 'lista-disciplina', component: ListaDisciplinaComponent },
