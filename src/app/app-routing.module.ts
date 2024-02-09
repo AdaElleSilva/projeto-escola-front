@@ -18,6 +18,7 @@ import { ListaProfessorComponent } from './pages/lista-professor/lista-professor
 import { ListaProfessorTurmaComponent } from './pages/lista-professor-turma/lista-professor-turma.component';
 import { ListaTurmaComponent } from './pages/lista-turma/lista-turma.component';
 import { CadastroAnoLetivoComponent } from './pages/cadastros/ano-letivo/cadastro-ano-letivo/cadastro-ano-letivo.component';
+import { CadastroAnoSerieComponent } from './pages/cadastros/ano-serie/cadastro-ano-serie/cadastro-ano-serie.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/welcome' },
@@ -26,6 +27,8 @@ const routes: Routes = [
   { path: 'cadastro-ano-letivo', component: CadastroAnoLetivoComponent },
   { path: 'editar-ano-letivo/:id', component: CadastroAnoLetivoComponent },
   { path: 'lista-ano-serie', component: ListaAnoSerieComponent },
+  { path: 'cadastro-ano-serie', component: CadastroAnoSerieComponent },
+  { path: 'editar-ano-serie/:id', component: CadastroAnoSerieComponent },
   { path: 'lista-cidade', component: ListaCidadeComponent },
   { path: 'lista-disciplina', component: ListaDisciplinaComponent },
   { path: 'lista-escola', component: ListaEscolaComponent },

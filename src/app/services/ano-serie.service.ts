@@ -16,7 +16,7 @@ export class AnoSerieService {
     return this.http.get<AnoSerie[]>(this.apiUrl);
   }
 
-  buscar(id: number): Observable<AnoSerie> {
+  buscar(id: string): Observable<AnoSerie> {
     return this.http.get<AnoSerie>(`${this.apiUrl}/${id}`);
   }
 
@@ -24,11 +24,11 @@ export class AnoSerieService {
     return this.http.post<AnoSerie>(this.apiUrl, eleitor);
   }
 
-  atualizar(id: number, eleitor: AnoSerie): Observable<AnoSerie> {
+  atualizar(id: string, eleitor: AnoSerie): Observable<AnoSerie> {
     return this.http.put<AnoSerie>(`${this.apiUrl}/${id}`, eleitor);
   }
 
-  deletar(id: number): Observable<any> {
+  deletar(id: string): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
 }
