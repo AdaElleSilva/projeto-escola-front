@@ -16,7 +16,7 @@ export class CidadeService {
     return this.http.get<Cidade[]>(this.apiUrl);
   }
 
-  buscar(id: number): Observable<Cidade> {
+  buscar(id: string): Observable<Cidade> {
     return this.http.get<Cidade>(`${this.apiUrl}/${id}`);
   }
 
@@ -24,11 +24,11 @@ export class CidadeService {
     return this.http.post<Cidade>(this.apiUrl, eleitor);
   }
 
-  atualizar(id: number, eleitor: Cidade): Observable<Cidade> {
+  atualizar(id: string, eleitor: Cidade): Observable<Cidade> {
     return this.http.put<Cidade>(`${this.apiUrl}/${id}`, eleitor);
   }
 
-  deletar(id: number): Observable<any> {
+  deletar(id: string): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
 }
