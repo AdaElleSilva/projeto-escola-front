@@ -16,7 +16,7 @@ export class DisciplinaService {
     return this.http.get<Disciplina[]>(this.apiUrl);
   }
 
-  buscar(id: number): Observable<Disciplina> {
+  buscar(id: string): Observable<Disciplina> {
     return this.http.get<Disciplina>(`${this.apiUrl}/${id}`);
   }
 
@@ -24,11 +24,11 @@ export class DisciplinaService {
     return this.http.post<Disciplina>(this.apiUrl, eleitor);
   }
 
-  atualizar(id: number, eleitor: Disciplina): Observable<Disciplina> {
+  atualizar(id: string, eleitor: Disciplina): Observable<Disciplina> {
     return this.http.put<Disciplina>(`${this.apiUrl}/${id}`, eleitor);
   }
 
-  deletar(id: number): Observable<any> {
+  deletar(id: string): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
 }
