@@ -16,7 +16,7 @@ export class EstadoService {
     return this.http.get<Estado[]>(this.apiUrl);
   }
 
-  buscar(id: number): Observable<Estado> {
+  buscar(id: string): Observable<Estado> {
     return this.http.get<Estado>(`${this.apiUrl}/${id}`);
   }
 
@@ -24,11 +24,11 @@ export class EstadoService {
     return this.http.post<Estado>(this.apiUrl, eleitor);
   }
 
-  atualizar(id: number, eleitor: Estado): Observable<Estado> {
+  atualizar(id: string, eleitor: Estado): Observable<Estado> {
     return this.http.put<Estado>(`${this.apiUrl}/${id}`, eleitor);
   }
 
-  deletar(id: number): Observable<any> {
+  deletar(id: string): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
 }

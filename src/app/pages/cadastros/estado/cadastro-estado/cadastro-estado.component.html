@@ -1,1 +1,31 @@
-<p>cadastro-estado works!</p>
+<nz-page-header nzBackIcon>
+    <nz-page-header-title>Cadastro de Estado</nz-page-header-title>
+    <nz-page-header-extra style="display: flex">
+      <button nz-button [disabled]="loading"
+              nzType="primary" (click)="onSalvar()">Salvar
+      </button>
+    </nz-page-header-extra>
+    <nz-page-header-content>
+  
+      <nz-divider style="margin-top: 10px"></nz-divider>
+      <nz-spin [nzSpinning]="loading" [nzTip]="'Processando...'">
+        <form nz-form [formGroup]="formulario" (ngSubmit)="onSalvar()">
+  
+          <nz-form-item>
+            <nz-form-label [nzSpan]="3" nzRequired nzFor="estado">Estado</nz-form-label>
+            <nz-form-control [nzSpan]="12" nzHasFeedback [nzErrorTip]="estadoErrorTpl">
+              <input nz-input app-uppercase formControlName="estado" placeholder="Estado"/>
+              <ng-template #estadoErrorTpl let-control>
+                <ng-container *ngIf="control.hasError('required')">Informe o estado</ng-container>
+                <ng-container *ngIf="control.hasError('maxlength')">Tamanho máximo 255</ng-container>
+              </ng-template>
+            </nz-form-control>
+          </nz-form-item>
+        </form>
+      </nz-spin>
+    </nz-page-header-content>
+  </nz-page-header>
+  <ng-template #suffixIconSearch>
+    <i nz-icon nzType="search"></i>
+  </ng-template>
+  

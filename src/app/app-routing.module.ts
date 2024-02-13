@@ -20,6 +20,7 @@ import { ListaTurmaComponent } from './pages/lista-turma/lista-turma.component';
 import { CadastroAnoLetivoComponent } from './pages/cadastros/ano-letivo/cadastro-ano-letivo/cadastro-ano-letivo.component';
 import { CadastroAnoSerieComponent } from './pages/cadastros/ano-serie/cadastro-ano-serie/cadastro-ano-serie.component';
 import { CadastroCidadeComponent } from './pages/cadastros/cidade/cadastro-cidade/cadastro-cidade.component';
+import { CadastroEstadoComponent } from './pages/cadastros/estado/cadastro-estado/cadastro-estado.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/welcome' },
@@ -36,6 +37,8 @@ const routes: Routes = [
   { path: 'lista-disciplina', component: ListaDisciplinaComponent },
   { path: 'lista-escola', component: ListaEscolaComponent },
   { path: 'lista-estado', component: ListaEstadoComponent },
+  { path: 'cadastro-estado', component: CadastroEstadoComponent },
+  { path: 'editar-estado/:id', component: CadastroEstadoComponent },
   { path: 'lista-genero', component: ListaGeneroComponent },
   { path: 'lista-horario-aula', component: ListaHorarioAulaComponent },
   { path: 'lista-matricula', component: ListaMatriculaComponent },
