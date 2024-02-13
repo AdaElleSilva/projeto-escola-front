@@ -16,7 +16,7 @@ export class PeriodoAulaService {
     return this.http.get<PeriodoAula[]>(this.apiUrl);
   }
 
-  buscar(id: number): Observable<PeriodoAula> {
+  buscar(id: string): Observable<PeriodoAula> {
     return this.http.get<PeriodoAula>(`${this.apiUrl}/${id}`);
   }
 
@@ -24,11 +24,11 @@ export class PeriodoAulaService {
     return this.http.post<PeriodoAula>(this.apiUrl, eleitor);
   }
 
-  atualizar(id: number, eleitor: PeriodoAula): Observable<PeriodoAula> {
+  atualizar(id: string, eleitor: PeriodoAula): Observable<PeriodoAula> {
     return this.http.put<PeriodoAula>(`${this.apiUrl}/${id}`, eleitor);
   }
 
-  deletar(id: number): Observable<any> {
+  deletar(id: string): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
 }

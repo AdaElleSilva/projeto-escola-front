@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { NzModalService } from 'ng-zorro-antd/modal';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { PeriodoAula } from 'src/app/models/periodo-aula';
 import { PeriodoAulaService } from 'src/app/services/periodo-aula.service';
 
@@ -9,17 +12,66 @@ import { PeriodoAulaService } from 'src/app/services/periodo-aula.service';
 })
 export class ListaPeriodoAulaComponent {
 
-  listaPeriodoAula!: PeriodoAula[];
+
+  listaPeriodoAula!:PeriodoAula[];
+  idRemocao!: string;
+  numeroRegistros: number = 0;
+  carregando = false;
 
   constructor(
-    private periodoAulaService: PeriodoAulaService) { }
+    private periodoAulaService: PeriodoAulaService,
+    private router: Router,
+    private modal: NzModalService,
+    private notification: NzNotificationService
+  ) { }
 
-
+  
   ngOnInit(): void {
-    this.periodoAulaService.listarTodos().subscribe(data => {
-      this.listaPeriodoAula = data;
-    });
+    this.onCarregar();
+  }
 
+  onNovo() {
+    this.router.navigate(['cadastro-periodo-aula']);
+  }
+
+  onModalDeletar(id:string){
+    this.idRemocao = id;
+    this.modal.confirm({
+      nzTitle: 'Confirmação de exclusão',
+      nzContent: '<b style="color: red;">Tem certeza que deseja excluir?</b>',
+      nzOkText: 'Sim',
+      nzOkType: 'primary',
+      nzOkDanger: true,
+      nzOnOk: () => this.onDeletar(),
+      nzCancelText: 'Não',
+      nzOnCancel: () => console.log('Cancel')
+    });
+  }
+
+  onDeletar(){
+    this.periodoAulaService.deletar(this.idRemocao).subscribe(() => {
+      this.onCarregar();
+
+      this.notification.create(
+        'success',
+        'Notificação',
+        'Registro deletado com sucesso!'
+      );
+
+    });
+  }
+
+  onCarregar(){
+    this.carregando = true;
+    this.periodoAulaService.listarTodos().subscribe(data =>{
+      this.listaPeriodoAula = data;
+      this.numeroRegistros = this.listaPeriodoAula.length;
+      this.carregando = false;
+    });
+  }
+
+  onEditar(periodoAula: PeriodoAula) {
+    this.router.navigate(['/editar-periodo-aula/', periodoAula.id]);    
   }
 
 }
