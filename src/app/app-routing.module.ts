@@ -22,6 +22,7 @@ import { CadastroAnoSerieComponent } from './pages/cadastros/ano-serie/cadastro-
 import { CadastroCidadeComponent } from './pages/cadastros/cidade/cadastro-cidade/cadastro-cidade.component';
 import { CadastroEstadoComponent } from './pages/cadastros/estado/cadastro-estado/cadastro-estado.component';
 import { CadastroDisciplinaComponent } from './pages/cadastros/disciplina/cadastro-disciplina/cadastro-disciplina.component';
+import { CadastroGeneroComponent } from './pages/cadastros/genero/cadastro-genero/cadastro-genero.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/welcome' },
@@ -43,6 +44,8 @@ const routes: Routes = [
   { path: 'cadastro-estado', component: CadastroEstadoComponent },
   { path: 'editar-estado/:id', component: CadastroEstadoComponent },
   { path: 'lista-genero', component: ListaGeneroComponent },
+  { path: 'cadastro-genero', component: CadastroGeneroComponent },
+  { path: 'editar-genero/:id', component: CadastroGeneroComponent },
   { path: 'lista-horario-aula', component: ListaHorarioAulaComponent },
   { path: 'lista-matricula', component: ListaMatriculaComponent },
   { path: 'lista-nota', component: ListaNotaComponent },

@@ -16,7 +16,7 @@ export class GeneroService {
     return this.http.get<Genero[]>(this.apiUrl);
   }
 
-  buscar(id: number): Observable<Genero> {
+  buscar(id: string): Observable<Genero> {
     return this.http.get<Genero>(`${this.apiUrl}/${id}`);
   }
 
@@ -24,11 +24,11 @@ export class GeneroService {
     return this.http.post<Genero>(this.apiUrl, eleitor);
   }
 
-  atualizar(id: number, eleitor: Genero): Observable<Genero> {
+  atualizar(id: string, eleitor: Genero): Observable<Genero> {
     return this.http.put<Genero>(`${this.apiUrl}/${id}`, eleitor);
   }
 
-  deletar(id: number): Observable<any> {
+  deletar(id: string): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
 }

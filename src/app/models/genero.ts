@@ -1,4 +1,4 @@
 export class Genero {
-    id!: number;
+    id!: string;
     nome!: string;
 }
